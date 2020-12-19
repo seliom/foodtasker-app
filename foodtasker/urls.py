@@ -18,6 +18,9 @@ from django.urls import path, include
 from django.contrib.auth import views as auth_views
 from foodtaskerapp import views
 
+from django.conf.urls.static import static
+from django.conf import settings
+
 urlpatterns = [
 # Web View - Admin
     path('admin/', admin.site.urls),
@@ -28,5 +31,7 @@ urlpatterns = [
         name='restaurant_sign_in'),
     path('restaurant/sign_out', auth_views.LogoutView.as_view(next_page='/'),
         name='restaurant_sign_out'),
-#path('restaurant/', views.restaurant_home, name = 'retsuarant=home')
-]
+    path('restaurant/sign_up', views.restaurant_sign_up,
+        name='restaurant_sign_up'),
+    path('restaurant/', views.restaurant_home, name = 'restaurant_home')
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
