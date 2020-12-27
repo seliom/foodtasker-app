@@ -4,8 +4,8 @@ from django.contrib.auth.models import User
 from foodtaskerapp.models import Restaurant
 
 class UserForm(forms.ModelForm):
-    email = forms.CharField(max_length=100, required = True)
-    password = forms.CharField(widget=forms.PasswordInput())
+    email = forms.CharField(max_length = 100, required = True)
+    password = forms.CharField(widget = forms.PasswordInput()) #Set input type is password
     
     class Meta:
         model = User

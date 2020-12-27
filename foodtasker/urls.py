@@ -16,10 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
-from foodtaskerapp import views
-
-from django.conf.urls.static import static
 from django.conf import settings
+from django.conf.urls.static import static
+
+from foodtaskerapp import views
 
 urlpatterns = [
 # Web View - Admin
@@ -31,7 +31,6 @@ urlpatterns = [
         name='restaurant_sign_in'),
     path('restaurant/sign_out', auth_views.LogoutView.as_view(next_page='/'),
         name='restaurant_sign_out'),
-    path('restaurant/sign_up', views.restaurant_sign_up,
-        name='restaurant_sign_up'),
-    path('restaurant/', views.restaurant_home, name = 'restaurant_home')
+    path('restaurant/sign_up', views.restaurant_sign_up, name='restaurant_sign_up'),
+    path('restaurant/', views.restaurant_home, name = 'restaurant_home'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
