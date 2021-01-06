@@ -26,7 +26,9 @@ SECRET_KEY = '!zzey@w#2%=su7cdc7v23z2hg9hbag6*(t)d@qv&uj_ximwzq)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'foodtaskerapplication.herokuapp.com'
+]
 
 
 # Application definition
